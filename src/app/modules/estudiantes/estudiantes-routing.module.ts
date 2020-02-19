@@ -8,8 +8,8 @@ import { EstudianteEditarComponent } from './pages/estudiante-editar/estudiante-
 import { EstudianteBuscarComponent } from './pages/estudiante-buscar/estudiante-buscar.component';
 //prioridades
 const routes: Routes = [
-  { path: '', component: EstudiantesComponent, 
-    children:[
+  { path: '', component: EstudiantesComponent, //COMPONENTE PADRE
+    children:[ //AQUI SE PONEN LOS COMPONENTES HIJOS "RUTAS"
       {
         path: 'crear',
         component:EstudianteCrearComponent,//se va al componente
