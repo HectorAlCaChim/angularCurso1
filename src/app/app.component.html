@@ -7,24 +7,28 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<div>
-  hola mundo
-  <br />
-  {{title}}<!--este hace referencia a title de app.componets.ts-->
-  <br />
-  {{1+1}}<!--se hace la suma de dos valores-->
-  <br />
-  <input class="form-control" type="text" [(ngModel)]="title">
-  <br />
-  <!--{{sumaValores(3, 4)}}se envian dos valores 3 y 4 a la funcion suma valores de app.components.ts-->
-  <br>
-  <label>numero1</label>
-  <input  type="number" [(ngModel)]="numero1">
-  <br />
-  <label>numero2</label>
-  <input  type="number" [(ngModel)]="numero2">
-  <br />
-  <button (click)=sumaValores(numero1,numero2)>Sumar</button>
-  <a>{{resultado}}</a>
+
+<!--<div>{{'Nombre: ' + estudiantes.Nombre+ ' '+estudiantes.Apellido1 + ' '+ estudiantes.Apellido2 + ' '+ estudiantes.Edad}}</div>-->
+<div class="container">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="[ '/home']">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="[ '/account']">Login</a> 
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="[ '/estudiantes']">Estudiantes</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>
 </div>
-<router-outlet></router-outlet>
