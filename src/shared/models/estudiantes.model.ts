@@ -1,3 +1,4 @@
+//modelos para el envio y retencion de informacion para el backend
 export class EstudianteModel{
 
     public Nombre: string;

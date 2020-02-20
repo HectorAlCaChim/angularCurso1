@@ -1,1 +1,18 @@
-<p>estudiante-buscar works!</p>
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido Paterno</th>
+        <th scope="col">Apellido Materno</th>
+        <th scope="col">Edad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of estudiantes">
+        <td>{{item.Nombre}}</td>
+        <td>{{item.Apellido1}}</td>
+        <td>{{item.Apellido2}}</td>
+        <td>{{item.Edad}}</td>
+      </tr>
+    </tbody>
+  </table>
