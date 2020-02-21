@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { EstudianteModel } from 'src/shared/models/estudiantes.model';
+import { EstudianteModel } from 'src/app/shared/models/estudiantes.model';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +9,12 @@ import { EstudianteModel } from 'src/shared/models/estudiantes.model';
 export class AppComponent {
 
   estudiantes : EstudianteModel = {
-    Edad:34,
-    Nombre :'hk',
-    Apellido1 :'hb',
-    Apellido2 : 'kbk'
-
+    idEstudiantes: 0,
+    edad:34,
+    nombre :'hk',
+    apellido1 :'hb',
+    apellido2 : 'kbk',
+    genero: 'ghj'
   };
 
  /* title = 'angularCurso1';

@@ -1,18 +1,30 @@
-<table class="table">
+<div class="container">
+  <div class="form-group">
+    <label for="buscar">Buscar</label>
+    <input type="text" class="form-control"[(ngModel)]="buscar">
+    <small id="Nombre" class="form-text text-light" >Escriba su nombre aqui</small>
+  </div>
+  <table class="table">
     <thead class="thead-dark">
       <tr>
         <th scope="col">Nombre</th>
         <th scope="col">Apellido Paterno</th>
         <th scope="col">Apellido Materno</th>
         <th scope="col">Edad</th>
+        <th scope="col">Genero</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of estudiantes">
-        <td>{{item.Nombre}}</td>
-        <td>{{item.Apellido1}}</td>
-        <td>{{item.Apellido2}}</td>
-        <td>{{item.Edad}}</td>
+      <tr *ngFor="let item of estudiantes | buscarEstudiante : buscar">
+        <td>{{item.nombre}}</td>
+        <td>{{item.apellido1}}</td>
+        <td>{{item.apellido2}}</td>
+        <td>{{item.edad}}</td>
+        <td>{{item.genero}}</td>
       </tr>
     </tbody>
   </table>
+  <div class="alert alert-primary" role="alert">
+     {{(estudiantes | buscarEstudiante : buscar).length}} 
+  </div>
+</div> 

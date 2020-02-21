@@ -4,7 +4,7 @@
         <div class="card-header">Estudiantes</div>
           <div class="card-body " >
             <!-- AQUI EMPIEZA EL FORMULARIO-->
-            <form [formGroup]="estudianteForm" (ngSubmit)="onSubmit(estudianteForm)">
+            <form [formGroup]="estudianteForm" >
               <div class="form-group">
                 <!--Aqui empiza CREACION DE AUMNO EN EL FOMULARIO-->
                 <label for="Nombre">Nombre</label>
@@ -53,24 +53,36 @@
                 <input type="number" class="form-control" id="Edad" formControlName="edad" placeholder="Edad" required>
                 <small id="Edad" class="form-text text-light">Ingrese su edad aqui</small>
               </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="genero" formControlName="genero" id="exampleRadios1" value="Masculino" checked>
-                <label class="form-check-label" for="exampleRadios1">
-                  Masculino
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="genero" formControlName="genero" id="exampleRadios1" value="Femenino" checked>
-                <label class="form-check-label" for="exampleRadios1">
-                  Femenino
-                </label>
-              </div>
               <div>
-                <button class="btn btn-primary" type="submit" [disabled]="!estudianteForm.valid">Save</button>
+                <button class="btn btn-primary" (click)="agregarTabla(estudianteForm)" [disabled]="!estudianteForm.valid">Save</button>
               </div>
             </form>
             <!-- AQUI TERMINA EL FORMULARIO-->
         </div>
     </div>
+</div>
+<div>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido Paterno</th>
+            <th scope="col">Apellido Materno</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Genero</th>
+            <th scope="col">Eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of estudiantes; let i = index">
+            <td>{{item.Nombre}}</td>
+            <td>{{item.Apellido1}}</td>
+            <td>{{item.Apellido2}}</td>
+            <td>{{item.Edad}}</td>
+            <td>{{item.Genero}}</td>
+            <td><button (click)="eliminar(i)" >{{i}}Eliminar</button></td>
+          </tr>
+        </tbody>
+      </table>
 </div>
 <router-outlet></router-outlet>
